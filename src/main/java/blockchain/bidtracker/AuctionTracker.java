@@ -6,6 +6,12 @@ import main.java.blockchain.bidtracker.models.User;
 
 import java.util.*;
 
+/**
+ * AuctionTracker is an implementation of the BidTracker interface
+ *
+ * Assumes all items can be bid on
+ *
+ */
 public class AuctionTracker implements BidTracker {
 
     private Map<Item, List<Bid>> auctionMap;
@@ -51,14 +57,32 @@ public class AuctionTracker implements BidTracker {
         return new HashSet<>(usersItems.get(user));
     }
 
+    /**
+     * Getter for an auctionMap instance for testing
+     *
+     * @return a copy of auctionMap
+     */
     public Map getAuctionMapCopy() {
         return new HashMap<>(auctionMap);
     }
 
+    /**
+     * Getter for an usersItems instance for testing
+     *
+     * @return a copy of usersItems
+     */
     public Map getUsersItemsCopy() {
         return new HashMap<>(usersItems);
     }
 
+    /**
+     * Validates a bid so that an insufficient bid is not recorded
+     * TODO: invalidate a bid where a user tries to outbid their own highest bid
+     *
+     * @param item Item that is being bid on
+     * @param bid Bid that is being recorded
+     * @throws InvalidBidException thrown when an insufficient bid is given
+     */
     private void validateBid(Item item, Bid bid) throws InvalidBidException {
         Objects.requireNonNull(item, "item must not be null");
         Objects.requireNonNull(bid, "bid must not be null");

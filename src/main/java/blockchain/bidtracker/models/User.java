@@ -2,6 +2,9 @@ package main.java.blockchain.bidtracker.models;
 
 import java.util.Objects;
 
+/**
+ * Represents an auction user
+ */
 public class User {
     private final String id;
     private final String name;

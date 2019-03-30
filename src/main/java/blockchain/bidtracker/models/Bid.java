@@ -2,6 +2,9 @@ package main.java.blockchain.bidtracker.models;
 
 import java.util.Objects;
 
+/**
+ * Represents a bid made in the auction
+ */
 public class Bid {
     private final User user;
     private final Item item;

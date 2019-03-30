@@ -14,6 +14,10 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.*;
 
+/**
+ * Tests for AuctionTracker
+ */
+
 class AuctionTrackerTest {
 
     private AuctionTracker auctionTracker;
